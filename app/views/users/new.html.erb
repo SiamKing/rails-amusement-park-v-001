@@ -1,0 +1,15 @@
+<div class="col-sm-6 col-sm-offset-3">
+    <h1>Signup!</h1>
+
+    <%= bootstrap_form_for @user do |f| %>
+        <%= f.text_field :name %>
+        <%= f.number_field :nausea %>
+        <%= f.number_field :happiness %>
+        <%= f.number_field :height %>
+        <%= f.number_field :tickets %>
+        <%= f.password_field :password %>
+        <%= f.check_box :admin %>
+
+        <%= f.submit %>
+    <% end %>
+</div>

@@ -1,0 +1,23 @@
+<div class="col-xs-6 col-xs-offset-3">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Name: <%= @attraction.name %>
+        </div>
+        <ul class="list-group">
+                <li class="list-group-item">Total Number of Users: <%= @attraction.users.count %></li>
+                <li class="list-group-item">Ticket Requirement: <%= @attraction.tickets %></li>
+                <li class="list-group-item">Height Requirement: <%= @attraction.min_height %></li>
+                <li class="list-group-item">Nausea Rating: <%= @attraction.nausea_rating %></li>
+                <li class="list-group-item">Happiness Rating: <%= @attraction.happiness_rating %></li>
+        </ul>
+        <div class="panel-body">
+            <% if current_user.admin? %>
+                <%= link_to "Edit Attraction", edit_attraction_path %>
+            <% else %>
+                <%= bootstrap_form_for [@attraction, @ride] do |f| %>
+                    <%= f.submit "Go on this ride" %>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>

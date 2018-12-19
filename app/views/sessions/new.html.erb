@@ -1,0 +1,10 @@
+<div class="col-sm-6 col-sm-offset-3">
+    <h1>Signin!</h1>
+
+    <%= bootstrap_form_tag url: signin_path do |f| %>
+        <%= f.collection_select(:user_name, User.all, :name, :name) %>
+        <%= f.password_field :password %>
+
+        <%= f.submit "Sign In" %>
+    <% end %>
+</div>
